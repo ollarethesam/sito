@@ -1,0 +1,60 @@
+footer{
+    height: fit-content;
+    margin-top: 20vh;
+    background-color: antiquewhite;
+    padding: 10vh 10vw;
+    display: flex;
+    align-items: center;
+}
+.info-container{
+    width: 50%;
+    border-left: 1px solid black;
+    min-height: 40vh;
+    margin: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.social-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px
+}
+.social-container a{
+    text-decoration: none;
+    color: black;
+}
+.social-container a ion-icon{
+    font-size: 36px;
+    margin: 8px;
+    transition: all 0.3s;
+}
+#whatsapp:hover{
+    color: #25D366;
+}
+#facebook:hover{
+    color: #3B5998;
+}
+#instagram:hover{
+    color: #F56040;
+}
+#linkedin:hover{
+    color: #0077B5;
+}
+@media (max-width: 789px) {
+    footer{
+        flex-direction: column;
+    }
+    .info-container{
+        min-height: 0;
+        height: fit-content;
+        margin-top: 10vh;
+        border-left: none;
+        border-top: 1px solid black;
+        width: 100%;
+    }
+}

@@ -1,0 +1,49 @@
+{% extends 'show/layout.html' %}
+{% block content %}
+{% load static %}
+    <div class="section1">
+        <div class="text-block">
+            <h1 class="title light-text">Title</h1>
+            <p class="text light-text">Lorem ipsum dolor sit amet consectetur</p>
+            <a class="contact-button" href="#contact-form">Contattaci!</a>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="image-block"></div>
+        <div class="text-block">
+            <h2 class="title">Title</h2>
+            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil dolorem quis optio illum corrupti, maxime velit! Quasi saepe vel illum cum velit soluta tempore praesentium corporis aut laboriosam? Quasi, commodi!</p>
+        </div>
+    </div>
+    <div class="section3">
+        <h2 class="title">Partners</h2>
+        <ul class="partners">
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+            <li class="partners-item"><a href="#"></a></li>
+        </ul>
+    </div>
+    <div class="section4">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="{% static 'show/media/bg1.jpg' %}" alt="">
+                <img id="slide-2"src="{% static 'show/media/bg2.jpg' %}" alt="">
+                <img id="slide-3"src="{% static 'show/media/bg1.jpg' %}" alt="">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1" class="active"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

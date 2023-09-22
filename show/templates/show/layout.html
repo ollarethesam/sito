@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy high-quality bicycle parts and save money while riding through Nevada.">
+    <meta name="keywords" content="word1, word2, word3">
+    <meta name="author" content="samuel nicolasi">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="{% static 'show/scripts/navbar-onscroll-animation.js' %}"></script>
+    <script src="{% static 'show/scripts/burger-btn.js' %}"></script>
+    <script src="{% static 'show/scripts/onscroll-animations.js' %}"></script>
+    <script src="{% static 'show/scripts/link-smooth-scrolling.js' %}"></script>
+    <script src="{% static 'show/scripts/active-slider-link.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'show/styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/partners.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/contact-form.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/success-msg.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'show/styles/general.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'show/media/favicon.ico' %}">
+    <title>Nome Sito</title>
+</head>
+<body>
+    <nav>
+        <a class='logo-link'href="{% url 'home' %}">
+            <img class="logo" src="{% static 'show/media/logo.png' %}" alt="Logo">
+        </a>
+        <ul class="link-container">
+            <li class="link"><a href="{% url 'home' %}">Home</a></li>
+            <li class="link"><a href="#">Manutenzione</a></li>
+            <li class="link"><a href="#">Assistenza</a></li>
+            <li class="link"><a href="#">Promozioni</a></li>
+            <li class="link"><a href="#">Contatti</a></li>
+        </ul>
+        <div class="burger-btn">
+            <span id="f"></span>
+            <span id="s"></span>
+            <span id="t"></span>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer id="footer">
+        <form id="contact-form" class="contact-form" action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            {% if field.name == 'message'%}
+            <div class="input-container textarea-container">
+                {{ field }}
+                <label class="input-name">{{ field.label }}</label>
+            </div>
+            {% else %}
+            <div class="input-container">
+                {{ field }}
+                <label class="input-name">{{ field.label }}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <input type="submit" class="send" value="Invia">
+        </form>
+        <div class="info-container">
+            <div class="info">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et dolor recusandae commodi, animi sint dolorem officia error nobis ipsam doloribus accusamus quasi quae deserunt. Mollitia reiciendis nam ratione cupiditate.</p>
+            </div>
+            <div class="social-container">
+                <a href="#"><ion-icon name="logo-whatsapp" id="whatsapp"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook" id="facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram" id="instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-linkedin" id="linkedin"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
