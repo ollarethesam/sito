@@ -85,7 +85,7 @@ nav.scrolling-down *{
         flex-direction: column;
     }
     .link-container.open{
-        height: 40vh;
+        height: 20vh;
         z-index: 10;
         opacity: 1;
     }
