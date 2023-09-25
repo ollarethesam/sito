@@ -19,7 +19,7 @@
     transform: translateY(0px);
     opacity: 1;
 }
-.partners-item a img{
+.partners-item img{
     height: 100%;
     width: 100%;
     flex: 1 0 100%;
